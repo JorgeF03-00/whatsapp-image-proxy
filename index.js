@@ -13,6 +13,9 @@ app.get('/proxy', async (req, res) => {
 
     res.set('Content-Type', contentType);
     res.set('Access-Control-Allow-Origin', '*');
+    res.set('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+    res.set('Access-Control-Allow-Methods', 'GET, OPTIONS');
+
     res.send(buffer);
   } catch (err) {
     res.status(500).send('Erro ao buscar imagem');
